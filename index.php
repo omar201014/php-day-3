@@ -25,10 +25,10 @@
         }
         if(isset($_POST['class_details'])){
             $class_details=$_POST['class_details'];
-        }
+        }    
         if(isset($_POST['courses'])){
-            $courses=$_POST['courses'];
-        }
+            $selected_courses=$_POST['courses'];
+        }    
     }
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
             <span class="error">* <?php echo $genderErrMsg;?></span>
             <br><br>
             <label for="courses">select a course:</label>
-            <select name="courses" multiple>
+            <select name="courses[]" multiple>
                 <option value="html">html</option>
                 <option value="Javascript">Javascript</option>
                 <option value="PHP">PHP</option>
@@ -87,5 +87,8 @@ echo "Email :".$email."<br />";
 echo "Group :".$group."<br />";
 echo "Class Details :".$class_details."<br />";
 echo "Gender :".$gender."<br />";
-echo "Your courses are :".$courses."<br />";
+echo "Your selected courses are :"."<br />";
+foreach($selected_courses as $course){
+    echo $course."<br />";
+}
 ?>
