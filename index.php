@@ -45,22 +45,22 @@
         <p><span class="error">*Required field.</span></p>
         <form action="<?php $_PHP_SELF ?>" method="post">
             <label for="name">Name:</label>
-            <input type="text" name="name">
+            <input id="name" type="text" name="name" required>
             <span class="error">* <?php echo $nameErrMsg;?></span>
             <br><br>
             <label for="email">Email:</label>
-            <input type="email" name="email">
+            <input id="email" type="email" name="email" required>
             <span class="error">*<?php echo $mailErrMsg;?></span>
             <br><br>
             <label for="group">Group #</label>
-            <input type="text" name="group">
+            <input id="group" type="text" name="group">
             <br><br>
             <label for="class_details">Class Details:</label>
-            <textarea name="class_details" cols="40" rows="5" style="display:block;"></textarea>
+            <textarea id="class_details" name="class_details" cols="40" rows="5" style="display:block;"></textarea>
             <br><br>
             <label for="gender">Gender: </label>
-            <input type="radio" name="gender" value="male">Male
-            <input type="radio" name="gender" value="female">Female
+            <input id="male" type="radio" name="gender" value="male"><label for="male">Male</label>
+            <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label>
             <span class="error">* <?php echo $genderErrMsg;?></span>
             <br><br>
             <label for="courses">select a course:</label>
@@ -72,7 +72,7 @@
             </select>
             <br><br>
             <label for="terms">Agree</label>
-            <input type="checkbox" name="terms">
+            <input id="terms" type="checkbox" name="terms" required>
             <span class="error">* <?php echo $termsErrMsg;?></span>
             <br><br>
             <input type="submit" name="submit">
