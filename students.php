@@ -27,7 +27,7 @@ $students = [
                 <th>Status</th>
             </tr>
             <?php foreach($students as $student){?>
-                <tr class="<?php echo $student['status']==='CMS'? "cms":"";?>">
+                <tr class="<?php echo $student['status']==='CMS'? "cms":"os";?>">
                     <td><?php echo $student['name'];?></td>
                     <td><?php echo $student['email'];?></td>
                     <td><?php echo $student['status'];?></td>

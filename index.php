@@ -94,5 +94,7 @@ if (!$nameErrMsg && !$mailErrMsg && !$genderErrMsg && !$termsErrMsg && !$genderE
     foreach($selected_courses as $course){
         echo $course."<br />";
     }
+}else{
+    echo "<p class='error'>Please enter all data to show your values</p>";
 }
 ?>
