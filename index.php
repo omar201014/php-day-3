@@ -45,11 +45,11 @@
         <p><span class="error">*Required field.</span></p>
         <form action="<?php $_PHP_SELF ?>" method="post">
             <label for="name">Name:</label>
-            <input id="name" type="text" name="name" required>
+            <input id="name" type="text" name="name">
             <span class="error">* <?php echo $nameErrMsg;?></span>
             <br><br>
             <label for="email">Email:</label>
-            <input id="email" type="email" name="email" required>
+            <input id="email" type="email" name="email">
             <span class="error">*<?php echo $mailErrMsg;?></span>
             <br><br>
             <label for="group">Group #</label>
@@ -72,7 +72,7 @@
             </select>
             <br><br>
             <label for="terms">Agree</label>
-            <input id="terms" type="checkbox" name="terms" required>
+            <input id="terms" type="checkbox" name="terms">
             <span class="error">* <?php echo $termsErrMsg;?></span>
             <br><br>
             <input type="submit" name="submit">
@@ -81,14 +81,18 @@
 </html>
 
 <?php
+
 echo "<h2>your given values are as:</h2>"."<br />";
-echo "name :".$name."<br />";
-echo "Email :".$email."<br />";
-echo "Group :".$group."<br />";
-echo "Class Details :".$class_details."<br />";
-echo "Gender :".$gender."<br />";
-echo "Your selected courses are :"."<br />";
-foreach($selected_courses as $course){
-    echo $course."<br />";
+
+if (!$nameErrMsg && !$mailErrMsg && !$genderErrMsg && !$termsErrMsg && !$genderErrMsg){
+    echo "name :".$name."<br />";
+    echo "Email :".$email."<br />";
+    echo "Group :".$group."<br />";
+    echo "Class Details :".$class_details."<br />";
+    echo "Gender :".$gender."<br />";
+    echo "Your selected courses are :"."<br />";
+    foreach($selected_courses as $course){
+        echo $course."<br />";
+    }
 }
 ?>
